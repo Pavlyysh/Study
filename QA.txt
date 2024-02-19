@@ -1,0 +1,107 @@
+QA
+
+HTTP
+    1. Methods
+    2. body
+    3. response statuses
+    4. headers
+    5. HTTPS
+    6. HTTP versions
+
+HTTP - (Hyper Text Transfer Protocol - протокол передачи гипертекста) - протокол передачи данных прикладного уровня
+
+    1. Methods
+
+        a) GET     - получить
+        b) POST    - записать/создать на сервере
+        c) PUT     - редактирование всей сущности
+        d) PATCH   - редактирование одного или нескольких полей
+        e) DELETE  - удаление сущности
+        f) OPTIONS - "ping" запрос и опрашивание доступных HTTP-методовс
+        TRACE, CONNECT, HEAD
+
+    2. body
+
+        a) Request body  - тело запроса
+        b) Response body - тело ответа
+            Типы данных в body:
+                JSON
+                XML
+                form-data
+                Text
+                ...
+
+            Популярный вопрос на собесе: у GET метода есть Request body?
+                    Можно отправить Request body, но не всегда так делают
+
+    3. HTTP response statuses
+
+        2** - success
+            200 - OK
+            201 - Created (создал сущность (POST))
+        3** - redirect
+            301 - Moved Permanently
+            302 - Moved Temporarily
+        4** - client errors
+            400 - Bad Request (неправильный email, неверный пароль, незаполенное поле)
+            401 - Unauthorized (пользователь пытается постучаться на ресурс, который требует авторизации)
+            402 - Payment Required (на ресурсе требуется подписка)
+            403 - Forbidden (запрещено (недостаточно прав))
+            404 - Not Found ()
+            409 - Conflict (при регистрации используется уже занятой имейл)
+            405, 408, 413, 414, 415, 418, 422. 429 - homework
+        5** - server errors
+            500 - Internal Server Error
+            503 - Service Unavailable
+            502 - Bad Gateway
+            504 - Gateway Timeout
+        1** - informational - устаревшие
+
+    4. headers (заголовки, доп.инфа)
+        
+        Request/Response headers
+            Examples:
+                Authorization: token
+                Cookie + Set-Cookie
+                Content-Type: text/html
+                Conten-Encoding: gzip
+                User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)
+                Referer, CORS headers, Caching headers - homework
+
+
+    5. HTTP
+                            1.1         2       3
+        Transport           TCP         TCP     QUIC
+        Format              Text        Binary  Binary
+        Parallel requests   Sequential  Multi   Multiplexing
+        Requests priority   Not         Yes     Yes
+        Headers compression Not         Yes     Yes
+        Server Push         Not         Yes     Yes
+
+        Мультиплексирование - передача нескольких потоков данных по одному каналу связи
+
+    6. HTTP + TLS = HTTPS (secure)
+
+        TLS - (transport layer security) - протокол защиты транспортного уровня
+
+        HTTPS 1.1: HTTP + TLS + TCP
+        HTTPS   2: HTTP + TLS + TCP
+        HTTPS   3: HTTP + (TLS + QUIC)
+
+ПОРТЫ
+
+    HTTP port 80
+    HTTPS port 443
+
+    Порт - целое неотрицательное число, записываемое в заголовках протоколов транспортного уровня сетевой модели OSI
+
+    Examples:
+        20, 21 -FTP
+        25 - SMTP
+        6881-6889 - torrent
+
+    Максимальная длина URL - 2000 символов примерно
+
+JSON-формат данных
+
+    
