@@ -195,20 +195,32 @@ default:
 // 	return fmt.Sprintf("Hi, %s! You're %d y.o.", name, age)
 // }
 
+// Массивы
+
+// func main() {
+// 	var arr [5]int
+// 	arr2 := [5]int{}
+// 	arrWithValues := [5]int{1, 2, 3, 4, 5}
+
+// 	fmt.Println(arr)
+// 	fmt.Println(arr2)
+// 	fmt.Println(arrWithValues)
+
+// 	arr[0] = 100
+// 	arr2[0] = 100
+// 	arrWithValues[0] = 100
+
+// 	fmt.Println(arr)
+// 	fmt.Println(arr2)
+	// fmt.Println(arrWithValues)
+// }
+
+//Слайсы
+
 func main() {
-	var arr [5]int
-	arr2 := [5]int{}
-	arrWithValues := [5]int{1, 2, 3, 4, 5}
-
-	fmt.Println(arr)
-	fmt.Println(arr2)
-	fmt.Println(arrWithValues)
-
-	arr[0] = 100
-	arr2[0] = 100
-	arrWithValues[0] = 100
-
-	fmt.Println(arr)
-	fmt.Println(arr2)
-	fmt.Println(arrWithValues)
+	week := [...]int{0, 1, 2, 3, 4, 5, 6, 7}
+	monday := week[1]
+	fmt.Println(len(week)) // 8
+	fmt.Println(monday)    // 1
+	fmt.Println(week[0])
 }
