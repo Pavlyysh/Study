@@ -259,3 +259,67 @@ default:
 // 	fmt.Println("arr", arr) // [0 100 0 0 0]
 // 	fmt.Println("sl", sl)   // [100]
 // }
+
+//// Хеш-таблица| Map - ассоциативный массив (ссылочный тип)
+
+// Одинаковый тип данных		Одинаковый тип данных
+// 1							monday
+// 2							tuesday
+// 3							wednesday
+// 4							thursday
+// 5							friday
+// 6							saturday
+// 7							sunday
+
+// func main() {
+// var m map[string]int
+// m2 := make(map[string]int)
+// m3 := map[string]int{}
+// m4 := map[string]int{
+// 	"1": 1,
+// 	"2": 2,
+// }
+// fmt.Println("m", m)
+// fmt.Println("m2", m2)
+// fmt.Println("m3", m3)
+// fmt.Println("m4", m4)
+
+// m := make(map[int]string)
+
+// m[1] = "hello"
+// m[2] = " "
+// m[3] = "world"
+// m[4] = "!"
+// fmt.Println(m)
+// m[4] = "?"
+// fmt.Println(m[4])
+// delete(m, 4)
+// fmt.Println(m)
+
+// k, ok := m[4]
+// fmt.Println("k", k)   // key
+// fmt.Println("ok", ok) // ok false
+
+// workdays := map[int]string{
+// 	1: "monday",
+// 	2: "tuesday",
+// 	3: "wednesday",
+// 	4: "thursday",
+// 	5: "friday",
+// }
+// fmt.Println(workdays[4]) // thursday
+
+// workdays[6] = "saturday"
+// fmt.Println(workdays[6]) // saturday
+// fmt.Println(workdays[7]) // пустая строка
+
+// day, ok := workdays[6] // ok = boolean
+
+// if ok {
+// 	fmt.Println("6 day is " + day) // 6 day is saturday
+// }
+
+// delete(workdays, 5) // удаляет ключ со значением (в данном примере удалилась пятница)
+// fmt.Println(workdays)
+// fmt.Println(len(workdays))
+// }
