@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // func main() {
 /*matrix := [][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
 
@@ -212,15 +210,52 @@ default:
 
 // 	fmt.Println(arr)
 // 	fmt.Println(arr2)
-	// fmt.Println(arrWithValues)
+// fmt.Println(arrWithValues)
 // }
 
-//Слайсы
+//// Слайсы - динамический массив
+// В отличии от массивов -- это изменяемый объект
+// Аллокация памяти - это когда ОС выделяет больше памяти для вашего приложения
 
-func main() {
-	week := [...]int{0, 1, 2, 3, 4, 5, 6, 7}
-	monday := week[1]
-	fmt.Println(len(week)) // 8
-	fmt.Println(monday)    // 1
-	fmt.Println(week[0])
-}
+// func main() {
+// 	week := [...]int{0, 1, 2, 3, 4, 5, 6, 7}
+// 	monday := week[1]
+// 	fmt.Println(len(week)) // 8
+// 	fmt.Println(monday)    // 1
+// 	fmt.Println(week[0])
+
+// 	weekend := week[6:8]  // включает индексы 6 и 7
+// 	weekend2 := week[6:]  // аналогично 2
+// 	fmt.Println(weekend)  // 6, 7
+// 	fmt.Println(weekend2) // 6, 7
+
+// 	fmt.Println(len(weekend2)) // длина слайса (2)
+// 	fmt.Println(cap(weekend2)) // вместимость слайса (2)
+
+// 	// Примеры создания слайсов
+// 	animals := []string{}
+// 	animals2 := make([]string, 5, 10)
+// 	animals = append(animals, "lion") // добавление эл-та в слайс
+// 	fmt.Println(animals)
+// 	fmt.Println(cap(animals2))
+
+// 	a := []int{1}
+// 	b := a[0:1]
+// 	b[0] = 0
+// 	fmt.Println(a) // [0]
+// 	a[0] = 1
+// 	fmt.Println(b) // [1]
+
+// 	var arr [5]int
+// 	_ = arr
+// 	var sl []int
+// 	sl = arr[1:2]
+
+// 	fmt.Println("arr", arr) // [0 0 0 0 0]
+// 	fmt.Println("sl", sl)   // [0]
+
+// 	arr[1] = 100
+
+// 	fmt.Println("arr", arr) // [0 100 0 0 0]
+// 	fmt.Println("sl", sl)   // [100]
+// }
