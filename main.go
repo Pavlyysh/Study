@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // func main() {
 /*matrix := [][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
 
@@ -323,3 +325,50 @@ default:
 // fmt.Println(workdays)
 // fmt.Println(len(workdays))
 // }
+
+//// Циклы - for each (range)
+
+// func main() {
+// 	arr := []string{"A", "B", "C"}
+// 	// for index, letter := range arr {	// range - перебирает массив arr
+// 	// 	// ...
+// 	// }
+// 	for i := 0; i < len(arr); i++ {
+// 		fmt.Println(arr[i])
+// 	}
+// }
+
+//// Циклы - while (for condition)
+// for condition {
+// 	// .. do something
+// }
+
+//// Циклы - infinity loop
+// for {
+// 	fmt.Println("infinity loop")
+// }
+
+//// Циклы - break
+// for i, n := range []int{1, 2, 3} {
+// 	fmt.Println(i)
+// 	fmt.Println(n)
+// 	break
+// }
+
+//// Примеры использования циклов
+func main() {
+	// arr := []string{"a", "b", "c"}
+	// for index, letter := range arr {
+	// 	fmt.Println(index, letter)
+	// }
+	m := map[string]int{
+		"a": 1,
+		"b": 2,
+		"c": 3,
+		"d": 4,
+	}
+	for k, v := range m { // не гарантирует совпадение с порядком значений внутри мапы
+		fmt.Println(v)
+		fmt.Println(k)
+	}
+}
