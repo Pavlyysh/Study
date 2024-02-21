@@ -370,3 +370,71 @@ default:
 // 		fmt.Println(k)
 // 	}
 // }
+
+//// Ветвления - if и switch
+// func main() {
+//// IF
+// age := // вводим возраст
+// if age >= 18 {	// && - оператор И; || - оператор ИЛИ
+// 	//pass
+// } else {
+// 	// you shall not pass
+// }
+
+//// SWITCH
+// 	hairColor := "black"
+// 	switch hairColor {
+// 	case "black":
+// 		fmt.Println("волосы черные - красим в белый")
+// 	case "white":
+// 		fmt.Println("волосы белые - красим в черный")
+// 	case "green":
+// 		fmt.Println("волосы зеленые - красим в красный")
+// 	default:
+// 		fmt.Println("мы не знаем цвет волос")
+// 	}
+
+// for i, n := range []int{1, 2, 3} {
+// 	if i == 1 && n == 2 {
+// 		fmt.Println("i == 1 && n == 2")
+// 		break
+// 	}
+// }
+
+// 	var found bool
+// 	arr := []int{1, 2, 3, 4, 5, 6, 7, 8}
+// 	for !found {
+// 		for i := 0; i < len(arr); i++ {
+// 			fmt.Println("work with", i+1)
+// 			found = findOut(arr[i])
+// 			if found { // по умолчанию это значение TRUE
+// 				break
+// 			}
+// 		}
+// 	}
+// }
+
+// func findOut(i int) bool {
+// 	return i%2 == 0
+// }
+
+// func main() {
+// 	knownFruit := false
+// 	fruit := "blueberry"
+// 	switch fruit {
+// 	case "apple":
+// 		fmt.Println("this is apple")
+// 		knownFruit = true
+// 	case "dragon fruit":
+// 		fmt.Println("this is dragon fruit")
+// 		knownFruit = true
+// 	default:
+// 		fmt.Println("we don't know this fruit")
+// 	}
+
+// 	if knownFruit { // по умолчанию значение TRUE
+// 		fmt.Println("we know this fruit")
+// 	}
+// }
+
+//// Указатели и nil
