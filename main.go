@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // func main() {
 /*matrix := [][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
 
@@ -356,19 +354,19 @@ default:
 // }
 
 //// Примеры использования циклов
-func main() {
-	// arr := []string{"a", "b", "c"}
-	// for index, letter := range arr {
-	// 	fmt.Println(index, letter)
-	// }
-	m := map[string]int{
-		"a": 1,
-		"b": 2,
-		"c": 3,
-		"d": 4,
-	}
-	for k, v := range m { // не гарантирует совпадение с порядком значений внутри мапы
-		fmt.Println(v)
-		fmt.Println(k)
-	}
-}
+// func main() {
+// 	// arr := []string{"a", "b", "c"}
+// 	// for index, letter := range arr {
+// 	// 	fmt.Println(index, letter)
+// 	// }
+// 	m := map[string]int{
+// 		"a": 1,
+// 		"b": 2,
+// 		"c": 3,
+// 		"d": 4,
+// 	}
+// 	for k, v := range m { // не гарантирует совпадение с порядком значений внутри мапы
+// 		fmt.Println(v)
+// 		fmt.Println(k)
+// 	}
+// }
