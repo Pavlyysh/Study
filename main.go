@@ -438,3 +438,28 @@ default:
 // }
 
 //// Указатели и nil
+// & - амперсанд
+// * - звездочка
+// new(T) - это универсальная функция
+
+// func main() {
+// 	// 	phrase := "hello"
+// 	// 	phrasePtr := &phrase    // тип данных *string
+// 	// 	fmt.Println(phrasePtr)  // 0xc000088050
+// 	// 	fmt.Println(*phrasePtr) // hello
+
+// 	name := "Pasha"
+// 	changeName(&name)
+// 	fmt.Println(name)
+// }
+
+// func changeName(name *string) {
+// 	*name = *name + "_new"
+// }
+
+//// Структуры и методы
+
+type User struct {
+	Name, Email string
+	IsConfirmed bool
+}
