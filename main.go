@@ -550,3 +550,23 @@ type GeoPosition srtuct {
 // 	}() // () - вызов функции
 // 	fmt.Println("hello")
 // }
+
+func main() {
+	// var s, sep string
+	// for i := 1; i < len(os.Args); i++ {
+	// 	s += sep + os.Args[i]
+	// 	sep = " "
+	// }
+	// fmt.Println(s)
+
+	// task 1.1
+	// fmt.Println(strings.Join(os.Args[0:], " "))
+
+	// task 1.2
+	// s := ""
+	// for i, arg := range os.Args[1:] {
+	// 	s = fmt.Sprintf("%d %s", i, arg)
+	// 	fmt.Println(s)
+	// }
+
+}
