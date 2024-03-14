@@ -1,5 +1,11 @@
 package main
 
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+
 // func main() {
 /*matrix := [][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
 
@@ -443,6 +449,19 @@ default:
 // new(T) - это универсальная функция
 
 // func main() {
+// 	i, j := 42, 2701
+
+// 	p := &i         // point to i
+// 	fmt.Println(*p) // read i through the pointer
+// 	*p = 21         // set i through the pointer
+// 	fmt.Println(i)  // see the new value of i
+
+// 	p = &j         // point to j
+// 	*p = *p / 37   // divide j through the pointer
+// 	fmt.Println(j) // see the new value of j
+// }
+
+// func main() {
 // 	// 	phrase := "hello"
 // 	// 	phrasePtr := &phrase    // тип данных *string
 // 	// 	fmt.Println(phrasePtr)  // 0xc000088050
@@ -457,13 +476,115 @@ default:
 // 	*name = *name + "_new"
 // }
 
-//// Структуры и методы
+//// Структуры - набор полей
 
-type UserCreateRequest struct {
-	FirstName string
-	Age       int
+// type User struct {
+// 	Name, Email string
+// 	IsConfirmed bool
+// }
+
+// func main() {
+// 	user := newUser("Pasha", "email@example.com")
+// 	fmt.Println(User.IsConfirmed)
+// }
+
+// func newUser(name string, email string) User {
+// 	return User{
+// 		Name:        name,
+// 		Email:       email,
+// 		IsConfirmed: false,
+// 	}
+// }
+
+// type Vertex struct {
+// 	X int
+// 	Y int
+// }
+
+// func main() {
+// 	v := Vertex{1, 2}
+// 	fmt.Println(v.X) // 1
+// 	v.X = 4
+// 	fmt.Println(v.X) // 4
+// }
+
+// func main() {
+// 	v := Vertex{1, 2}
+// 	p := &v // pointer to struct
+// 	p.X = 1e9
+// 	fmt.Println(v)
+// }
+
+//// Встраивание структуры
+/* Было
+type Vehicle struct{
+	Brand string
+	Model string
+	Latitude string
+	Longitude string
+} */
+
+/* Стало
+type Vehicle struct {
+	Brand string
+	Model string
+	GPSPosition GeoPosition //можно встроить и без поля GPSPosition
 }
 
-func main(req UserCreateRequest) string {
-	return req.FirstName
+type GeoPosition srtuct {
+	Latitude string
+	Longitude string
+}
+*/
+// func main() {
+// 	geoPos := GeoPosition{"58.1234", "22.1235"}
+// 	myCar := Vehicle{"Lexus", "221", geoPos}
+// }
+
+//// Интерфейс - это набор методов, представляющих поведение для различных типов данных
+
+//// Defer - выполняется до return
+// 1 - выполнение перед выходом из внешней функции
+// 2 - всегда выполнится
+// 3 - несколько вызовов defer (разных функций)
+// 4 - освобождение ресурсов (закрытие файла и т.д)
+// 5 - если несколько дефер подряд, то last-in-first-out
+
+// func main() {
+// 	defer func() { // создали анонимную функцию
+// 		fmt.Println("world")
+// 	}() // () - вызов функции
+// 	fmt.Println("hello")
+// }
+
+// func main() {
+// var s, sep string
+// for i := 1; i < len(os.Args); i++ {
+// 	s += sep + os.Args[i]
+// 	sep = " "
+// }
+// fmt.Println(s)
+
+// task 1.1
+// fmt.Println(strings.Join(os.Args[0:], " "))
+
+// task 1.2
+// s := ""
+//
+//	for i, arg := range os.Args[1:] {
+//		s = fmt.Sprintf("%d %s", i, arg)
+//		fmt.Println(s)
+//	}
+func main() {
+	counts := make(map[string]int)
+	input := bufio.NewScanner(os.Stdin)
+	for input.Scan() {
+		counts[input.Text()]++
+	}
+	// NOTE: ignoring potential errors from input.Err()
+	for line, n := range counts {
+		if n > 1 {
+			fmt.Printf("%d\t%s\n", n, line)
+		}
+	}
 }
