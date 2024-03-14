@@ -459,7 +459,11 @@ default:
 
 //// Структуры и методы
 
-type User struct {
-	Name, Email string
-	IsConfirmed bool
+type UserCreateRequest struct {
+	FirstName string
+	Age       int
+}
+
+func main(req UserCreateRequest) string {
+	return req.FirstName
 }
