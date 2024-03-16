@@ -1,10 +1,6 @@
 package main
 
-import (
-	"bufio"
-	"fmt"
-	"os"
-)
+import "fmt"
 
 // func main() {
 /*matrix := [][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
@@ -575,16 +571,52 @@ type GeoPosition srtuct {
 //		s = fmt.Sprintf("%d %s", i, arg)
 //		fmt.Println(s)
 //	}
+// func main() {
+// 	counts := make(map[string]int)
+// 	input := bufio.NewScanner(os.Stdin)
+// 	for input.Scan() {
+// 		counts[input.Text()]++
+// 	}
+// 	// NOTE: ignoring potential errors from input.Err()
+// 	for line, n := range counts {
+// 		if n > 1 {
+// 			fmt.Printf("%d\t%s\n", n, line)
+// 		}
+// 	}
+// }
+
+//// Callback function
+// func doSomething(callback func(int, int) int, s string) int {
+// 	result := callback(5, 1)
+// 	fmt.Println(s)
+// 	return result
+// }
+
+// func main() {
+// 	sumCallback := func(n1, n2 int) int {
+// 		return n1 + n2
+// 	}
+// 	result := doSomething(sumCallback, "plus")
+// 	fmt.Println(result)
+
+// 	mulCallback := func(n1, n2 int) int {
+// 		return n1 * n2
+// 	}
+// 	result = doSomething(mulCallback, "multiplies")
+// 	fmt.Println(result)
+// }
+
+//// Замыкаиня
+func totalPrice(initPrice int) func(int) int {
+	sum := initPrice
+	return func(x int) int {
+		sum += x
+		return sum
+	}
+}
+
 func main() {
-	counts := make(map[string]int)
-	input := bufio.NewScanner(os.Stdin)
-	for input.Scan() {
-		counts[input.Text()]++
-	}
-	// NOTE: ignoring potential errors from input.Err()
-	for line, n := range counts {
-		if n > 1 {
-			fmt.Printf("%d\t%s\n", n, line)
-		}
-	}
+	// fmt.Println(totalPrice(100)(10))
+	orderPrice := totalPrice(10)
+	fmt.Println(orderPrice(5))
 }
