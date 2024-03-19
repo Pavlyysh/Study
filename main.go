@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 // func main() {
 /*matrix := [][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
@@ -607,16 +610,93 @@ type GeoPosition srtuct {
 // }
 
 //// Замыкаиня
-func totalPrice(initPrice int) func(int) int {
-	sum := initPrice
-	return func(x int) int {
-		sum += x
-		return sum
-	}
+// func totalPrice(initPrice int) func(int) int {
+// 	sum := initPrice
+// 	return func(x int) int {
+// 		sum += x
+// 		return sum
+// 	}
+// }
+
+// func main() {
+// 	// fmt.Println(totalPrice(100)(10))
+// 	orderPrice := totalPrice(10)
+// 	fmt.Println(orderPrice(5))
+// }
+
+// func main() {
+// 	var a, b int
+// 	var op string
+// 	fmt.Scan(&a)
+// 	fmt.Scan(&op)
+// 	if op == "-" {
+// 		fmt.Scan(&b)
+// 		fmt.Println(minus(a, b))
+// 	} else if op == "+" {
+// 		fmt.Scan(&b)
+// 		fmt.Println(plus(a, b))
+// 	} else if op == "*" {
+// 		fmt.Scan(&b)
+// 		fmt.Println(multiple(a, b))
+// 	} else if op == "/" {
+// 		fmt.Scan(&b)
+// 		fmt.Println(divide(a, b))
+// 	} else {
+// 		fmt.Println("Неверный оператор")
+// 	}
+// }
+// func plus(a, b int) int {
+// 	return a + b
+// }
+
+// func minus(a, b int) int {
+// 	return a - b
+// }
+
+// func multiple(a, b int) int {
+// 	return a * b
+// }
+
+// func divide(a, b int) int {
+// 	return a / b
+// }
+
+// func twoSum(nums []int, target int) []int {
+// 	var s []int
+// 	for i := 0; i < len(nums); i++ {
+// 		if nums[i]+nums[i+1] == target {
+// 			s = nums[i : i+1]
+// 		}
+// 	}
+// 	return s
+// }
+
+// func isPalindrome(x int) bool {
+// 	var res int
+// 	num := x
+// 	for num > 0 {
+// 		rem := num % 10
+// 		res = (res * 10) + rem
+// 		num /= 10
+// 	}
+// 	fmt.Println(res)
+// 	fmt.Println(x)
+// 	if res == x {
+// 		return true
+// 	} else {
+// 		return false
+// 	}
+// }
+
+// func main() {
+// 	fmt.Println(isPalindrome(121))
+// }
+
+func split(s string) string {
+	fmt.Println(strings.Split(s, " "))
+	return s
 }
 
 func main() {
-	// fmt.Println(totalPrice(100)(10))
-	orderPrice := totalPrice(10)
-	fmt.Println(orderPrice(5))
+	split("Камон Каом вава вава")
 }
