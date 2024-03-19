@@ -700,21 +700,30 @@ import (
 // // 	split("Камон Каом вава вава")
 // // }
 
-func main() {
-	romInt := map[string]int {
-        "I": 1,
-        "V": 5,
-        "X": 10,
-        "L": 50,
-        "C": 100,
-        "D": 500,
-        "M": 1000,
-    }
-	s := "XXII"
-	value := 0
-	prevValue := 0
-	for _, ind := range strings.Split(s) {
-		value := int(ind)
-		if value
+func romanToInt(s string) int {
+	romInt := map[string]int{
+		"I": 1,
+		"V": 5,
+		"X": 10,
+		"L": 50,
+		"C": 100,
+		"D": 500,
+		"M": 1000,
 	}
+	var value, prevValue, res int = 0, 0, 0
+
+	for _, el := range strings.Split(s, "") {
+		for rom, _ := range romInt {
+			if el == rom {
+				value = romInt[rom]
+			}
+			if value > prevValue {
+				res += value - prevValue
+			}
+			if value < prevValue {
+
+			}
+		}
+	}
+	return res
 }
