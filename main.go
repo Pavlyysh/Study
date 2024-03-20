@@ -1,8 +1,6 @@
 package main
 
-import (
-	"strings"
-)
+import "fmt"
 
 // // func main() {
 // /*matrix := [][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
@@ -700,30 +698,49 @@ import (
 // // 	split("Камон Каом вава вава")
 // // }
 
-func romanToInt(s string) int {
-	romInt := map[string]int{
-		"I": 1,
-		"V": 5,
-		"X": 10,
-		"L": 50,
-		"C": 100,
-		"D": 500,
-		"M": 1000,
-	}
-	var value, prevValue, res int = 0, 0, 0
+// func romanToInt(s string) int {
+// 	romInt := map[string]int{
+// 		"I": 1,
+// 		"V": 5,
+// 		"X": 10,
+// 		"L": 50,
+// 		"C": 100,
+// 		"D": 500,
+// 		"M": 1000,
+// 	}
+// 	var res int = 0
+// 	for i := 0; i < len(s); i++ {
+// 		if i+1 < len(s) && romInt[string(s[i])] < romInt[string(s[i+1])] {
+// 			res -= romInt[string(s[i])]
+// 		} else {
+// 			res += romInt[string(s[i])]
+// 		}
+// 	}
+// 	return res
+// }
 
-	for _, el := range strings.Split(s, "") {
-		for rom, _ := range romInt {
-			if el == rom {
-				value = romInt[rom]
-			}
-			if value > prevValue {
-				res += value - prevValue
-			}
-			if value < prevValue {
-
-			}
+func binarySearch(s []int, item int) bool {
+	found := false
+	low := 0
+	high := len(s) - 1
+	for low <= high {
+		i := 0
+		mid := (low + high) / 2
+		if s[mid] == item {
+			found = true
+			break
+		} else if s[mid] > item {
+			high = mid - 1
+		} else {
+			low = mid + 1
+			i++
 		}
 	}
-	return res
+	return found
+}
+
+func main() {
+	array := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
+	item := 11
+	fmt.Println(binarySearch(array, item))
 }
